@@ -1,18 +1,31 @@
 body{
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: aquamarine;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .donutContainer{
-    text-align: center;
-    background-color: turquoise;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: 0.1fr 1fr;
+    gap: 20px;
+}
+
+.game{
+    background-color: chartreuse;
     border-radius: 10px;
-    box-shadow: 0 0 10px #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu{
+    background-color: tomato;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 #donut{
@@ -25,8 +38,26 @@ body{
     outline: none;
 }
 
-#counter{
-    font-size: 10px;
+#upgradeSelect{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#purchaseButton{
+    background-color: aqua;
+    color: teal;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#purchaseButton:disabled{
+    background-color: coral;
+    cursor: not-allowed;
 }
 
 .dropdown{
