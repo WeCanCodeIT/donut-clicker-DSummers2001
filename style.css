@@ -1,0 +1,69 @@
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.donutContainer{
+    text-align: center;
+    background-color: turquoise;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+}
+
+#donut{
+    background-image: url here;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#counter{
+    font-size: 10px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+#dropdownButton{
+    background-color: aqua;
+    color: azure;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#dropdownList{
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: blueviolet;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+#dropdownList li{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#dropdownList li:hover{
+    background-color: wheat;
+    color: yellowgreen;
+}
+
+.show{
+    display: block;
+}
