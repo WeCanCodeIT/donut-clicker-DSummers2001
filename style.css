@@ -1,100 +1,157 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body {
+    min-height: 100vh;
     margin: 0;
-    background-color: aquamarine;
-    font-family: 'Times New Roman', Times, serif;
+    background-color: #36474f;
+    font-family: Arial, sans-serif;
+    user-select: none;
 }
 
-.donutContainer{
+header{
+    position: absolute;
+    width: 100%;
+    min-height: 50px;
+    background-color: #3498db;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    color: aliceblue;
+    font-size: 1.75em;
+    font-weight: 600;
+    text-decoration: none;
+}
+header ul{
+    position: relative;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+    float: left;
+}
+header ul li a{
+    color: aliceblue;
+    font-size: 1.1em;
+    padding: 20px 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+header ul li a:hover{
+    background-color: #2b93e3;
+}
+header ul li ul{
+    position: absolute;
+    left: 0;
+    width: 100px;
+    background: #445964;
+    display: none;
+}
+header ul li:hover ul{
+    display: block;
+}
+header ul li ul li{
+    position: relative;
+    width: 100%;
+}
+
+.game-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-row: 0.1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.6fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "about about"
+    "game upgrades";
 }
 
-.game{
-    background-color: chartreuse;
+.game {
+    grid-area: game;
+    background-color: #ffce98;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
 }
 
-.menu{
-    background-color: tomato;
+.menu {
+    grid-area: upgrades;
+    background-color: #b5e7a0;
     border-radius: 10px;
     padding: 20px;
 }
 
-#donut{
-    background-image: url here;
-    background-size: cover;
+.about{
+    grid-area: about;
+}
+
+.game img{
     width: 200px;
-    height: 200px;
-    border: none;
+}
+.game img:hover{
+    opacity: 0.9;
     cursor: pointer;
-    outline: none;
+}
+.game img:active{
+    opacity: 0.8;
+    transform: scale(1.02);
 }
 
-#upgradeSelect{
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
 
-#purchaseButton{
-    background-color: aqua;
-    color: teal;
+.midSection h4{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.midSection p{
+    margin: 0;
+}
+.costInfo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.upgradeImg{
+    width: 50px;
+}
+.donutImgUpgrade{
+    width: 20px;
+    height: 20px;
+}
+.upgrades{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: 60px;
+    border: 4px solid #ccc;
     padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
     border-radius: 5px;
 }
 
-#purchaseButton:disabled{
-    background-color: coral;
-    cursor: not-allowed;
+#donutCount {
+    font-size: 36px;
+    color: #ffab40;
 }
 
-.dropdown{
-    position: relative;
-    display: inline-block;
+#upgradeSelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-#dropdownButton{
-    background-color: aqua;
-    color: azure;
+#purchaseButton {
+    background-color: #3498db;
+    color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
-#dropdownList{
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: blueviolet;
-    border: 1px solid #ccc;
-    padding: 0;
-    margin: 0;
-    display: none;
-}
-
-#dropdownList li{
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-#dropdownList li:hover{
-    background-color: wheat;
-    color: yellowgreen;
-}
-
-.show{
-    display: block;
+#purchaseButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

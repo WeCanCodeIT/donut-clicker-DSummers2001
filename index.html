@@ -5,32 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Donut Clicker</title>
+    <title>Fred's Baking Co</title>
 </head>
 <body>
-    <div class="donutContainer">
-        <div class="dropdown">
-            <button id="dropdownBtn">Select an option</button>
-            <ul id="dropdownList">
-                <li>Fred's Baking Company</li>
-                <p></p>
-                <li>Inspiration</li>
-                <p></p>
-                <li>Contact</li>
-                <p></p>
-            </ul>
+    <div class="game-container">
+        <div class="about">
+            <header>
+                <a href="#" class="logo">Fred's Baking Company</a>
+                <div class="menuToggle"></div>
+                <nav>
+                    <ul>
+                        <li><a href="#">About<b>></b></a>
+                            <ul>
+                                <li><p>Fred's Baking Company is a warm and inviting bakery nestled in the heart of our community. Established with a passion for creating exceptional baked goods, we take pride in crafting a wide array of delectable treats that are sure to delight your taste buds.
+                                    Our story began with Fred, a dedicated baker with a lifelong love for the art of baking. Fred's commitment to quality and taste is the foundation of our company. Every morning, our skilled bakers meticulously prepare a diverse selection of fresh pastries, bread, and cakes, using only the finest ingredients. our creations are made with love and care.</p></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Inspiration<b>></b></a>
+                            <ul>
+                                <li><p>The inspiration behind Fred creating a website for his bakery, Fred's Baking Company, was driven by a desire to reach a broader audience, enhance customer convenience, and adapt to the evolving digital landscape of the business world.</p></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact<b>></b></a>
+                            <ul>
+                                <li><p>Email: fredpastries@gmail.com phone:(375)920-3042 github | linkedIn</p></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </div>
         <div class="game">
-            <button id="donut">Click Me!</button>
-            <h1>Donuts: <span id="count">0</span></h1>
+            <h1>Donuts: <span class="donutCost">0</span></h1>
+            <img src="./Donut.jpg" alt="donut" class="donutImg" onclick="incrementDonut()" draggable="false">
         </div>
         <div class="menu">
-            <h2>Upgrade Menu</h2>
-            <select id="upgradeSelect">
-                <option value="1">Faster Clicks (10 Donuts)</option>
-                <option value="5">Auto Donuts (50 Donuts)</option>
-            </select>
-            <button id="purchaseButton">Purchase</button>
+            <div class="upgrades" onclick="buyClicker()">
+                <div class="leftSection">
+                    <img src="./Clicker.jpg" alt="Clicker" class="upgradeImg">
+                </div>
+                <div class="midSection">
+                    <h4>Clicker</h4>
+                    <div class="costInfo">
+                        <p>Cost: <span class="clickerCost">20</span></p>
+                        <img src="./Donut.jpg" alt="Donut" class="donutImgUpgrade">
+                    </div>
+                </div>
+                <div class="rightSection">
+                    <p>Level <span class="clickerLevel">0</span></p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

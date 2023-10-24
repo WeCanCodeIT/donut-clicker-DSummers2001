@@ -1,46 +1,17 @@
-let count = 0;
-let clickValue = 1;
-let autoDonutRate = 0;
-let autoDonuts = 0;
+let donut = document.querySelector('.donutCost');
+let parsedDonut = parseFloat(donut.innerHTML)
 
-const donutButton = document.getElementById("donut");
-const countDisplay = document.getElementById("count");
-const upgradeSelect = document.getElementById("upgradeSelect");
-const purchaseButton = document.getElementById("purchaseButton");
-const dropdownButton = document.getElementById("dropdownButton");
-const dropdownList = document.getElementById("dropdownList");
+let clickerCost = document.querySelector('.clickerCost');
+let parsedClickerCost = parseFloat(clickerCost.innerHTML)
 
-function updateDisplay(){
-    CountDisplay.textContent = count;
-    upgradeSelect.options[0].text = `Faster Clicks (10 Donuts, Current: ${clickValue}x)`;
-    upgradeSelect.options[1].text = `Auto Donuts (50 Donuts, Current: ${autoDonutRate} per second)`;
+function buyClicker(){
+    if (parsedDonut >= parsedClickerCost){
+        parsedDonut -= parsedClickerCost
+        donut.innerHTML = parsedDonut
+    }
 }
 
-donutButton.addEventListener('click', () => {
-    donutCount += clickValue;
-    updateDisplay();
-});
-
-upgradeSelect.addEventListener('change', () =>{
-    const selectedValue = upgradeSelect.value;
-        if (donutCount >= selectedValue){
-            if (selectedValue === '1'){
-                clickValue +=1;
-            } else if (selectedValue === '5'){
-                autoDonutRate += 1;
-                autoDonuts += autoDonutRate;
-            }
-            donutCount -= selectedValue;
-            upgradeSelect.selectedIndex = 0;
-            updateDisplay();
-        }
-});
-
-function autoDonutClick(){
-    donutCount += autoDonuts;
-    updateDisplay();
+function incrementDonut(){
+    parsedDonut += 1
+    donut.innerHTML = parsedDonut
 }
-
-setInterval(autoDonutClick, 1000);
-
-updateDisplay();
