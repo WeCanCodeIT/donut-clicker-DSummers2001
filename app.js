@@ -1,11 +1,12 @@
 let donut = document.querySelector('.donutCost');
 let parsedDonut = parseFloat(donut.innerHTML);
-
+let donutImg = document.querySelector('.donutImg');
 let clickerCost = document.querySelector('.clickerCost');
 let parsedClickerCost = parseFloat(clickerCost.innerHTML);
-
-let autoClickerLevel = document.getElementById('.clickerLevel');
+let autoClickerLevel = 0;
+let autoLevel = document.querySelector('.clickerLevel');
 let autoClickerInterval;
+
 
 function purchaseItem(){
     if (parsedDonut >= parsedClickerCost){
@@ -13,13 +14,12 @@ function purchaseItem(){
         parsedDonut -= parsedClickerCost;
         donut.innerHTML = parsedDonut;
 
-        parsedClickerCost *= 1.2;
+        parsedClickerCost *= 1.1;
         clickerCost.innerHTML = parsedClickerCost;
 
-        autoClickerLevel++;
-
-        clearInterval(autoClickerInterval);
-        autoClickerInterval = setInterval(incrementDonut, 1000 / autoClickerLevel);
+        autoClickerLevel ++;
+        autoLevel.innerHTML = autoClickerLevel;
+        autoClickerInterval = setInterval(autoClickerCount, 1000);
     } else {
         alert('Insufficient balance to purchase this item.');
     }
@@ -34,5 +34,10 @@ function buyClicker(){
 
 function incrementDonut(){
     parsedDonut += 1;
+    donut.innerHTML = parsedDonut;
+}
+
+function autoClickerCount(){
+    parsedDonut += autoClickerLevel;
     donut.innerHTML = parsedDonut;
 }
