@@ -14,7 +14,7 @@ function purchaseItem(){
         parsedDonut -= parsedClickerCost;
         donut.innerHTML = parsedDonut;
 
-        parsedClickerCost *= 1.1;
+        parsedClickerCost = Math.round(parsedClickerCost * 1.1);
         clickerCost.innerHTML = parsedClickerCost;
 
         autoClickerLevel ++;

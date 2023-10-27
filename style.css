@@ -52,8 +52,9 @@ header ul li:hover ul{
     display: block;
 }
 header ul li ul li{
-    position: relative;
-    width: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
 }
 
 .game-container {
