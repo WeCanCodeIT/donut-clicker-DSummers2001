@@ -52,9 +52,12 @@ header ul li:hover ul{
     display: block;
 }
 header ul li ul li{
+    margin: 0;
+    padding: 4px;
     font-size: 12px;
-    display: flex;
+    text-align: center;
     justify-content: center;
+    color: #ccc;
 }
 
 .game-container {
@@ -68,6 +71,7 @@ header ul li ul li{
 }
 
 .game {
+    margin: 8px;
     grid-area: game;
     background-color: #ffce98;
     border-radius: 10px;
@@ -76,6 +80,7 @@ header ul li ul li{
 }
 
 .menu {
+    margin: 8px;
     grid-area: upgrades;
     background-color: #ffce98;
     border-radius: 10px;
